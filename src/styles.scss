@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./reset.css";
+@import "./core-styles/typography.scss";
+
+html {
+    font-size: 100%;
+}
+
+.max-container {
+    max-width: 100%;
+    padding: 0 3rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+button {
+    font-size: 1rem;
+    padding: .4rem 1rem;
+    border: 1px solid #000;
+    border-radius: .2rem;
+    background-color: #fff;
+}

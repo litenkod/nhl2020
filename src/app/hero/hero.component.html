@@ -1,0 +1,19 @@
+<section class="hero" >
+    <div class="hero__inner" 
+        *ngFor="let item of heroList; let i = index" 
+        [attr.data-index]="i" 
+        [ngStyle]="{'background-image': 'url(./assets/images/' + item.imgUrl + ')'}" 
+        [ngClass]="{'hero__inner--active': i == currentIndex}"
+        >
+        <div class="hero__content">
+            <h1>{{item.header}}</h1>
+            <p class="hero__preamble">
+                {{item.preamble}}
+            </p>
+        </div>
+    </div>
+    <div class="hero__controller">
+        <button class="hero__next" (click)="slide(-1)">Prev</button>
+        <button class="hero__next" (click)="slide(+1)">Next</button>
+    </div>
+</section>
