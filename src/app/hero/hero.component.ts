@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import heroData from './hero.json';
+// import heroData from './hero.json';
+import heroData from '../../assets/data/hero.json';
 
 @Component({
   selector: 'app-hero',
@@ -13,7 +14,6 @@ export class HeroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // console.log('Init Hero');
   }
 
   slide(value) {

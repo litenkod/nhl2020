@@ -1,0 +1,38 @@
+
+<div class="team-detail" *ngIf="team$">
+    <div class="team-detail__header">
+        <img src="https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/{{team$.id}}.svg" alt="{{team$.name}}">
+        <h2>{{team$.name}}</h2>
+        <a href="{{team$.officialSiteUrl}}" class="team-detail__link">{{team$.officialSiteUrl}}</a>
+    </div>
+
+    <div class="team-detail__sort">
+        <button class="btn" (click)="sortRoster('pos')">Position</button>
+        <button class="btn" (click)="sortRoster('name')">Name</button>
+        <button class="btn" (click)="sortRoster('number')">Number</button>
+    </div>
+    <div class="team-detail__roster max-container" *ngIf="roster$">
+        <div 
+        class="team-detail__player" 
+        *ngFor="let player of roster$;">
+            <img src="https://nhl.bamcontent.com/images/headshots/current/168x168/{{player.person.id}}.jpg" alt="{{player.person.fullName}}">
+            <div class="iteam-detail__playernfo">
+                <span class="team-detail__player-no">{{player.jerseyNumber}}</span>
+                <span class="team-detail__player-name">{{player.person.fullName}}</span>
+                <span class="team-detail__player-pos">{{player.position.type}}</span>
+                <!-- <span class="player-info"></span> -->
+            </div>
+            <!-- <div class="player-stats">
+                <div>
+                    <span class="games">GP82 </span>
+                    <span class="goal">G1 </span>
+                    <span class="assists">A21 </span>
+                    <span class="points">P22 </span>
+                    <span class="gameWinningGoals"> - GWG0 </span>
+                    <span class="shortHandedGoals">SHG1 </span>
+                    <span class="pim">PIM61</span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

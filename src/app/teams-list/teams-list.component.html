@@ -1,0 +1,9 @@
+<div class="team-list max-container">
+    <a 
+        class="btn" 
+        *ngFor="let team of teams$; index as teamId" 
+        [routerLink]="['/teams', team.id]" 
+        data-id="{{team.id}}">
+        <img src="https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/{{team.id}}.svg" alt={team.name}/>
+    </a>
+</div>

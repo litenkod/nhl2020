@@ -1,0 +1,27 @@
+
+.team-list{
+	display: flex;
+	flex-flow: wrap row;
+	// justify-content: flex-start;
+	justify-content: center;
+}
+.team-list a{
+	margin: 0.2rem;
+	padding: 0.2rem 0.4rem;
+	flex-grow: 1;
+	max-width: 6.2rem;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+
+	&.-active,
+	&:hover{
+		// color: $link-color;
+		background: #ffddee;
+		border-color: pink;
+	}
+
+	img{
+		width: 6rem;
+	}
+}

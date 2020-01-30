@@ -1,0 +1,23 @@
+
+.top-banner {
+    padding: 1rem 0;
+    background: #333;
+    border-bottom: .4rem solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__logo {
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__header {
+        margin-left: 1rem;
+        font-size: 3rem;
+        color: #fff;
+    }
+
+}
