@@ -4,9 +4,36 @@
     min-height: 200px;
     width: 100%;
     color: #fff;
+    background: pink;
 
+    h1 {
+        font-size: 3rem;
+    }
     h1, p {
         color: #fff;
+    }
+
+
+    &__header {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    &__link {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        color: #ccc;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+            color: #fff;
+            background-color: hotpink;
+        }
     }
 
     &__preamble {
@@ -24,12 +51,10 @@
         bottom: 0;
         display: flex;
         background-size: cover;
-        opacity: 0;
         transition: opacity .6s ease-in-out;
-
-        &--active{
-            opacity: 1;
-        }
+        background-color: #333;
+        background-position: center;
+        // filter: grayscale(100%);
 
         &:before {
             content: '';
@@ -39,7 +64,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);       
+            background-color: rgba(0, 0, 0, 0.5);
         }
     }
 
@@ -52,6 +77,10 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
+
+        img {
+            width: 8rem;
+        }
     }
 
     &__controller {

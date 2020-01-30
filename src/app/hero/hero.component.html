@@ -1,19 +1,11 @@
-<section class="hero" >
+<section class="hero --clear-section" >
     <div class="hero__inner" 
-        *ngFor="let item of heroList; let i = index" 
-        [attr.data-index]="i" 
-        [ngStyle]="{'background-image': 'url(./assets/images/' + item.imgUrl + ')'}" 
-        [ngClass]="{'hero__inner--active': i == currentIndex}"
+        *ngIf="inputData"
+        [ngStyle]="{'background-image': 'url(' + inputData.imgSrc + ')'}"
         >
         <div class="hero__content">
-            <h1>{{item.header}}</h1>
-            <p class="hero__preamble">
-                {{item.preamble}}
-            </p>
+            <h1>{{inputData.name}}</h1>
+            <a href="{{inputData.officialSiteUrl}}" class="hero__link">{{inputData.officialSiteUrl}}</a>
         </div>
-    </div>
-    <div class="hero__controller">
-        <button class="hero__next" (click)="slide(-1)">Prev</button>
-        <button class="hero__next" (click)="slide(+1)">Next</button>
     </div>
 </section>

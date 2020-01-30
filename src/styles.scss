@@ -7,16 +7,27 @@ html {
     font-size: 100%;
 }
 
-.max-container {
+.g-max-container {
     max-width: 100%;
     padding: 0 3rem;
 }
 
-section {
-    margin-bottom: 3rem;
+.g-padding-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
-button, .btn {
+section {
+    margin-bottom: 3rem;
+
+    &.--clear-section {
+        margin-bottom: 0;
+    }
+}
+
+
+button,
+.btn {
     padding: .4rem .6rem;
     font-size: 1rem;
     font-family: Open Sans Condensed,Arial,sans-serif;

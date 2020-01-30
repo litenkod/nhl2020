@@ -10,6 +10,12 @@ import helper from '../helper'
 export class TeamsListComponent implements OnInit {
   teams$;
 
+  inputData = {
+    imgSrc:'https://www-league.nhlstatic.com/images/logos/league-dark/133.svg',
+    name: 'NHL',
+    officialSiteUrl: 'http://nhl.com'
+  };
+  
   constructor(private teamsService: TeamsService) { }
 
   fetchTeams() {

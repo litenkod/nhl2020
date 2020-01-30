@@ -1,4 +1,7 @@
-<div class="team-list max-container">
+<!-- <app-top-banner></app-top-banner> -->
+<app-hero *ngIf="inputData" [inputData]="inputData" ></app-hero>
+
+<div class="team-list g-max-container">
     <a 
         class="btn" 
         *ngFor="let team of teams$; index as teamId" 

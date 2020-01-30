@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-// import heroData from './hero.json';
-import heroData from '../../assets/data/hero.json';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -8,23 +6,19 @@ import heroData from '../../assets/data/hero.json';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
-  public heroList:{name:string, header:string, preamble:string}[] = heroData;
-  public currentIndex = 0;
+
+  @Input() inputData: any[];
+
+  // @Output() onDatePicked: EventEmitter<any> = new EventEmitter<any>();
+  // public pickDate(date: any): void {
+  //   this.onDatePicked.emit(date);
+  // }
 
   constructor() { }
-
+  
   ngOnInit() {
+    console.log(this.inputData)
   }
 
-  slide(value) {
-
-    if (value > 0) {
-      this.currentIndex = this.currentIndex + value !== heroData.length ? this.currentIndex + value : 0;
-    } else {
-
-      this.currentIndex = this.currentIndex === 0 ? heroData.length - 1 : this.currentIndex + value;
-    }
-
-  }
 
 }

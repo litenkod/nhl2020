@@ -1,6 +1,21 @@
 
 .team-detail {
 
+    // &__background {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;   
+    //     background-size: 3rem;
+    //     background-size: 1000%;
+    //     background-position: center;
+    //     background-repeat: no-repeat;
+    //     filter:blur(40px);
+    //     // opacity: .6;
+    //     z-index: -1;
+    // }
+
     img {
         width: 5rem;
 
@@ -8,23 +23,6 @@
             width: 6rem;
         }
         
-    }
-
-    &__header {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 3rem;
-    }
-
-    &__link {
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-        color: #ccc;
-        text-decoration: none;
-        text-align: center;
     }
 
     &__sort {
@@ -43,7 +41,6 @@
         grid-template-columns: 6fr 6fr;
         grid-row-gap: 1.4rem;
         grid-column-gap: 1rem;
-        margin-bottom: 3rem;
     }
 
     &__player {
@@ -53,6 +50,7 @@
         grid-template-columns: auto 5fr;
         grid-column-gap: .6rem;
         border: 1px solid #ccc;
+        background: #fff;
 
         img {
             max-width: 100%;

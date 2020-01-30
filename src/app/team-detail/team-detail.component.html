@@ -1,22 +1,22 @@
 
-<div class="team-detail" *ngIf="team$">
-    <div class="team-detail__header">
-        <img src="https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/{{team$.id}}.svg" alt="{{team$.name}}">
-        <h2>{{team$.name}}</h2>
-        <a href="{{team$.officialSiteUrl}}" class="team-detail__link">{{team$.officialSiteUrl}}</a>
-    </div>
+<app-hero *ngIf="team$" [inputData]="inputData"></app-hero>
 
+<section 
+    class="team-detail g-padding-container" 
+    *ngIf="team$" 
+    >
+    <!-- <div class="team-detail__background" [ngStyle]="{'background-image': 'url(' + inputData.imgSrc + ')'}"></div> -->
     <div class="team-detail__sort">
         <button class="btn" (click)="sortRoster('pos')">Position</button>
         <button class="btn" (click)="sortRoster('name')">Name</button>
         <button class="btn" (click)="sortRoster('number')">Number</button>
     </div>
-    <div class="team-detail__roster max-container" *ngIf="roster$">
+    <div class="team-detail__roster g-max-container" *ngIf="roster$">
         <div 
         class="team-detail__player" 
         *ngFor="let player of roster$;">
             <img src="https://nhl.bamcontent.com/images/headshots/current/168x168/{{player.person.id}}.jpg" alt="{{player.person.fullName}}">
-            <div class="iteam-detail__playernfo">
+            <div class="iteam-detail__player-info">
                 <span class="team-detail__player-no">{{player.jerseyNumber}}</span>
                 <span class="team-detail__player-name">{{player.person.fullName}}</span>
                 <span class="team-detail__player-pos">{{player.position.type}}</span>
@@ -35,4 +35,4 @@
             </div> -->
         </div>
     </div>
-</div>
+</section>
