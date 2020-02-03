@@ -1,3 +1,4 @@
+
 .hero {
     position: relative;
     height: 30vh;
@@ -5,13 +6,6 @@
     width: 100%;
     color: #fff;
     background: pink;
-
-    h1 {
-        font-size: 3rem;
-    }
-    h1, p {
-        color: #fff;
-    }
 
 
     &__header {
@@ -51,6 +45,8 @@
         bottom: 0;
         display: flex;
         background-size: cover;
+        background-size: 110%;
+        background-repeat: no-repeat;
         transition: opacity .6s ease-in-out;
         background-color: #333;
         background-position: center;

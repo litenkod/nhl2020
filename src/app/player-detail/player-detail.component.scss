@@ -1,0 +1,96 @@
+
+:host ::ng-deep .hero h1 {
+    position: relative;
+    width: 100%;
+    font-size: 7rem;
+    font-family: var(--font-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero__numbers {
+        position: absolute;
+        width: 16rem;
+        left: 3rem;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16rem;
+        margin-left: -2rem;
+        // margin-top: -4rem;
+        font-family: var(--font-3);
+        opacity: .7;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #888;
+    }
+
+    .hero__name{
+        position: relative;
+        width: 65vw;
+        margin-left: 1rem;
+        text-shadow: 1px 1px 1px #777;
+    }
+}
+
+.player-detail {
+
+    &__info {
+        display: grid;
+        grid-template-columns: minmax(3rem, 16rem) 3fr;
+        grid-gap: 1rem;
+
+        img {
+            max-width: 100%;
+            border-radius: 100%;
+            border: 2px solid #ccc;
+        }
+    }
+
+    h2 {
+        text-align: left;
+        // font-size: 2rem;
+
+        span {
+            display: block;
+            font-size: 3rem;
+            // letter-spacing: .4rem;
+        }
+    }
+
+    &__data {
+        font-size: 1.4rem;
+        padding-left: 3rem;
+    }
+
+    &__header {
+        font-size: 3rem;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__captain,
+    &__alternate-captain,
+    &__rookie {
+        padding: .6rem;
+        color: #fff;
+        background: #e0dfdf;
+        border: 2px solid #ccc;
+    }
+
+    &__rookie {
+        line-height: 3rem;
+        font-size: 1.6rem;
+    }
+
+    &__birth,
+    &__size {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    &__stats {
+        border-top: 1px solid #ccc;
+    }
+}

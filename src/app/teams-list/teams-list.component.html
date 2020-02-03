@@ -1,7 +1,7 @@
 <!-- <app-top-banner></app-top-banner> -->
 <app-hero *ngIf="inputData" [inputData]="inputData" ></app-hero>
 
-<div class="team-list g-max-container">
+<div class="team-list g-max-container g-padding-container">
     <a 
         class="btn" 
         *ngFor="let team of teams$; index as teamId" 
@@ -10,3 +10,5 @@
         <img src="https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/{{team.id}}.svg" alt={team.name}/>
     </a>
 </div>
+
+<p *ngIf="copyright$"> {{copyright$}}</p>

@@ -8,16 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Teams';
-  // inputData = {
-  //   imgSrc:'https://www-league.nhlstatic.com/images/logos/league-dark/133.svg',
-  //   name: 'NHL',
-  //   officialSiteUrl: 'http://nhl.com'
-  // };
-
-
-  // public doSomething(date: any):void {
-  //   console.log('Picked date: ', date);
-  // }
+  
   constructor() {}
 
   ngOnInit() {

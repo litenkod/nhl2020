@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 // import { TopBannerComponent } from './top-banner/top-banner.component';
 import { TeamsListModule } from './teams-list/teams-list.module';
+import { CopyrightTextComponent } from './copyright-text/copyright-text.component';
+// import { PlayerStatsComponent } from './player-stats/player-stats.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    // HeroComponent,
     SearchComponent,
-    // TopBannerComponent
+    CopyrightTextComponent,
+    // PlayerStatsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+
+<app-hero *ngIf="player$" [inputData]="inputData"></app-hero>
+<section class="player-detail g-max-container g-padding-container" *ngIf="player$" >
+    <div class="player-detail__info">
+        <img src="https://nhl.bamcontent.com/images/headshots/current/168x168/{{player$.id}}@3x.jpg" alt="{{player$.fullName}}">
+        <div class="player-detail__data">
+            <div class="player-detail__header">
+                <span class="player-detail__pos">{{player$.primaryPosition.name}}</span>
+                <span class="player-detail__rookie" *ngIf="player$.rookie">Rookie</span>
+                <span class="player-detail__alternate-captain" *ngIf="player$.alternateCaptain">A</span>
+                <span class="player-detail__captain" *ngIf="player$.captain">C</span>
+            </div>
+            <div class="player-detail__name">
+                <!-- {{player$.fullName}} -->
+            </div>
+            <div class="player-detail__birth">
+                {{player$.nationality}} | {{player$.birthCity}} | {{player$.currentAge}} ({{player$.birthDate}})
+            </div>
+            <div class="player-detail__size">
+                {{player$.height}} | {{player$.weight}} | 
+                <span *ngIf="player$.shootsCatches === 'R'; else elseBlock">Right</span>
+                <ng-template #elseBlock>Left</ng-template>
+            </div>
+        </div>
+    </div>
+
+    <app-player-stats [playerData]="player$"></app-player-stats>
+
+</section>

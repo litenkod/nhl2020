@@ -24,12 +24,28 @@
     font-style: normal;
 }
 
-$font-1: "Raleway-Light",Arial,sans-serif;
-$font-2: "Raleway-Medium",Arial,sans-serif;
+@font-face {
+    font-family: "AnonymousPro-Regular";
+    src: url("./assets/fonts/AnonymousPro-Regular.eot"); /* IE9 Compat Modes */
+    src: url("./assets/fonts/AnonymousPro-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("./assets/fonts/AnonymousPro-Regular.otf") format("opentype"), /* Open Type Font */
+      url("./assets/fonts/AnonymousPro-Regular.svg") format("svg"), /* Legacy iOS */
+      url("./assets/fonts/AnonymousPro-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("./assets/fonts/AnonymousPro-Regular.woff") format("woff"), /* Modern Browsers */
+      url("./assets/fonts/AnonymousPro-Regular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+:root {
+    --font-1: "Raleway-Light",Arial,sans-serif;
+    --font-2: "Raleway-Medium",Arial,sans-serif;
+    --font-3: "AnonymousPro-Regular",Arial,sans-serif;
+}
 
 html {
     font-size: 100%;
-    font-family: $font-1;
+    font-family: var(--font-1);
 }
 
 ::selection { 
@@ -43,7 +59,7 @@ h2 {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 h2 {

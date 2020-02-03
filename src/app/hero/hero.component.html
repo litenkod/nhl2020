@@ -4,7 +4,7 @@
         [ngStyle]="{'background-image': 'url(' + inputData.imgSrc + ')'}"
         >
         <div class="hero__content">
-            <h1>{{inputData.name}}</h1>
+            <h1 [innerHTML]="inputData.name"></h1>
             <a href="{{inputData.officialSiteUrl}}" class="hero__link">{{inputData.officialSiteUrl}}</a>
         </div>
     </div>

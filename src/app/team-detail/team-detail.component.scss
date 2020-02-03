@@ -47,7 +47,7 @@
         position: relative;
         display: grid;
         // grid-template-rows: auto 5rem;
-        grid-template-columns: auto 5fr;
+        grid-template-columns: auto 5fr 2rem;
         grid-column-gap: .6rem;
         border: 1px solid #ccc;
         background: #fff;
@@ -83,6 +83,18 @@
         &-pos {
             display: inline-block;
             font-size: .8rem;
+        }
+
+        a {
+            border-radius: 0;
+            margin: -1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                width: 3rem;
+            }
         }
     }
 

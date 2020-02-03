@@ -9,6 +9,7 @@ import helper from '../helper'
 })
 export class TeamsListComponent implements OnInit {
   teams$;
+  copyright$;
 
   inputData = {
     imgSrc:'https://www-league.nhlstatic.com/images/logos/league-dark/133.svg',
@@ -20,6 +21,8 @@ export class TeamsListComponent implements OnInit {
 
   fetchTeams() {
     this.teamsService.fetchTeams().subscribe(val => {
+      console.log('val :', val);
+      this.copyright$ = val.copyright
       this.teams$ = [...helper.sortName(val.teams)];
     });
   }

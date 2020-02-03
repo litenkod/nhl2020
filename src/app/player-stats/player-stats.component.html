@@ -1,0 +1,146 @@
+
+<div class="player-stats g-padding-container" *ngIf="playerStats$" >
+    <div *ngIf="playerData.primaryPosition.code === 'G'; else elseForwardStats">
+        <table>
+            <thead>
+                <th>Games</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Ties</th>
+                <th>Over Time Losses</th>
+            </thead>
+            <tbody>
+                <td>{{playerStats$.games}}</td>
+                <td>{{playerStats$.wins}}</td>
+                <td>{{playerStats$.losses}}</td>
+                <td>{{playerStats$.ties}}</td>
+                <td>{{playerStats$.ot}}</td>
+            </tbody>
+        </table>
+        <div class="player-stats__minor-stats">
+            <h3>Stats</h3>
+            <table>
+                <thead>
+                    <th>SA</th>
+                    <th>GA</th>
+                    <th>GAA</th>
+                    <th>Sv%</th>
+                    <th>SO</th>
+                    <th>MIN</th>
+                </thead>
+                <tbody>
+                    <td>{{playerStats$.shotsAgainst}}</td>
+                    <td>{{playerStats$.goalsAgainst}}</td>
+                    <td>{{playerStats$.goalAgainstAverage}}</td>
+                    <td>{{playerStats$.savePercentage}}</td>
+                    <td>{{playerStats$.shutouts}}</td>
+                    <td>{{playerStats$.timeOnIce}}</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #elseForwardStats>
+        <table>
+            <thead>
+                <th>Games</th>
+                <th>Goals</th>
+                <th>Assists</th>
+                <th>Points</th>
+            </thead>
+            <tbody>
+                <td>{{playerStats$.games}}</td>
+                <td>{{playerStats$.goals}}</td>
+                <td>{{playerStats$.assists}}</td>
+                <td>{{playerStats$.points}}</td>
+            </tbody>
+        </table>
+
+        <div class="player-stats__minor-stats">
+            <h3>Stats</h3>
+            <table>
+                <thead>
+                    <th>S</th>
+                    <th>S%</th>
+                    <th>GWG</th>
+                    <th>PPG</th>
+                    <th>PPP</th>
+                    <th>PP-TOI</th>
+                    <th>PP-TOI/G</th>
+                    <th>OTG</th>
+                    <th>TOI</th>
+                    <th>TOI/G</th>
+                </thead>
+                <tbody>
+                    <td>{{playerStats$.shots}}</td>
+                    <td>{{playerStats$.shotPct}}</td>
+                    <td>{{playerStats$.gameWinningGoals}}</td>
+                    <td>{{playerStats$.powerPlayGoals}}</td>
+                    <td>{{playerStats$.powerPlayPoints}}</td>
+                    <td>{{playerStats$.powerPlayTimeOnIce}}</td>
+                    <td>{{playerStats$.powerPlayTimeOnIcePerGame}}</td>
+                    <td>{{playerStats$.overTimeGoals}}</td>
+                    <td>{{playerStats$.evenTimeOnIce}}</td>
+                    <td>{{playerStats$.evenTimeOnIcePerGame}}</td>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <th>FO</th>
+                    <th>Hits</th>
+                    <th>PIM</th>
+                    <th>SHG</th>
+                    <th>SHP</th>
+                    <th>SH-TOI</th>
+                    <th>SH-TOI/G</th>
+                    <th>Blocked</th>
+                    <th>+/-</th>
+                </thead>
+                <tbody>
+                    <td>{{playerStats$.faceOffPct}}</td>
+                    <td>{{playerStats$.hits}}</td>
+                    <td>{{playerStats$.pim}}</td>
+                    <td>{{playerStats$.shortHandedGoals}}</td>
+                    <td>{{playerStats$.shortHandedPoints}}</td>
+                    <td>{{playerStats$.shortHandedTimeOnIce}}</td>
+                    <td>{{playerStats$.shortHandedTimeOnIcePerGame}}</td>
+                    <td>{{playerStats$.blocked}}</td>
+                    <td>{{playerStats$.plusMinus}}</td>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+
+    
+    
+
+
+<!-- timeOnIce: "1094:21"
+assists: 26
+goals: 14
+pim: 32
+shots: 170
+games: 47
+hits: 52
+powerPlayGoals: 2
+powerPlayPoints: 12
+powerPlayTimeOnIce: "148:39"
+evenTimeOnIce: "836:20"
+penaltyMinutes: "32"
+faceOffPct: 0
+shotPct: 8.2
+gameWinningGoals: 3
+overTimeGoals: 2
+shortHandedGoals: 0
+shortHandedPoints: 1
+shortHandedTimeOnIce: "109:22"
+blocked: 63
+plusMinus: 30
+points: 40
+shifts: 1310
+timeOnIcePerGame: "23:17"
+evenTimeOnIcePerGame: "17:47"
+shortHandedTimeOnIcePerGame: "02:19"
+powerPlayTimeOnIcePerGame: "03:09" -->
+</div>

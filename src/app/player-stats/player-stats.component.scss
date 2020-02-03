@@ -1,0 +1,38 @@
+
+.player-stats {
+
+    table {
+        width: 100%;
+        text-align: center;
+        table-layout: fixed;
+
+        thead {
+            border-bottom: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: .8rem;
+        }
+    }
+
+    &__minor-stats {
+        margin-top: 6rem;
+        overflow: auto;
+
+        h3 {
+            text-align: center;
+        }
+        table {
+            margin: 4rem 0;
+            font-size: .8rem;
+
+            td,
+            th {
+                padding: .4rem;
+                width: 5rem;
+            }
+            overflow-x: scroll;
+        }
+    }
+}
