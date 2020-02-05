@@ -4,24 +4,24 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { TeamsService } from '../teams.service';
-import { TeamsListComponent } from '../teams-list/teams-list.component';
+import { TeamsListComponent } from './start-view.component';
 
-import { TeamDetailComponent } from '../team-detail/team-detail.component';
 import { HeroComponent } from '../hero/hero.component';
-import { TopBannerComponent } from '../top-banner/top-banner.component';
 import { PlayerDetailComponent } from '../player-detail/player-detail.component';
-import { TeamDetailModule } from '../team-detail/team-detail.module';
 import { PlayerStatsComponent } from '../player-stats/player-stats.component';
+import { TeamDetailModule } from '../team-detail/team-detail.module';
+import { TeamDetailComponent } from '../team-detail/team-detail.component';
+import { TopBannerComponent } from '../top-banner/top-banner.component';
 
 
 @NgModule({
   declarations: [
-    TopBannerComponent,
-    TeamsListComponent,
-    TeamDetailComponent,
+    HeroComponent,
     PlayerDetailComponent,
     PlayerStatsComponent,
-    HeroComponent,
+    TeamDetailComponent,
+    TeamsListComponent,
+    TopBannerComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +33,6 @@ import { PlayerStatsComponent } from '../player-stats/player-stats.component';
       { path: 'player/:playerId', component: PlayerDetailComponent },
     ])
   ],
-  providers: [TeamsService],
+  providers: [],
 })
 export class TeamsListModule { }

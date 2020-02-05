@@ -1,3 +1,4 @@
+@import '../../core-styles/mixins.scss';
 
 .hero {
     position: relative;
@@ -7,10 +8,10 @@
     color: #fff;
     background: pink;
 
-
+    
     &__header {
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: center;
         margin-bottom: 3rem;
@@ -66,11 +67,14 @@
 
     &__content {
         width: 100%;
-        padding: 3rem;
+        padding: 1rem;
+        @include mobile-l {
+            padding: 3rem;
+        }
         position: relative;
         z-index: 1;
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: column;
         justify-content: center;
         align-items: center;
 

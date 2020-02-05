@@ -1,5 +1,5 @@
 
-<div class="player-stats g-padding-container" *ngIf="playerStats$" >
+<div class="player-stats g-padding-container" *ngIf="playerStats$ else elseNoStats" >
     <div *ngIf="playerData.primaryPosition.code === 'G'; else elseForwardStats">
         <table>
             <thead>
@@ -111,36 +111,8 @@
             </table>
         </div>
     </ng-template>
-
-    
-    
-
-
-<!-- timeOnIce: "1094:21"
-assists: 26
-goals: 14
-pim: 32
-shots: 170
-games: 47
-hits: 52
-powerPlayGoals: 2
-powerPlayPoints: 12
-powerPlayTimeOnIce: "148:39"
-evenTimeOnIce: "836:20"
-penaltyMinutes: "32"
-faceOffPct: 0
-shotPct: 8.2
-gameWinningGoals: 3
-overTimeGoals: 2
-shortHandedGoals: 0
-shortHandedPoints: 1
-shortHandedTimeOnIce: "109:22"
-blocked: 63
-plusMinus: 30
-points: 40
-shifts: 1310
-timeOnIcePerGame: "23:17"
-evenTimeOnIcePerGame: "17:47"
-shortHandedTimeOnIcePerGame: "02:19"
-powerPlayTimeOnIcePerGame: "03:09" -->
 </div>
+
+<ng-template #elseNoStats>
+    <p class="no-stats">No stats available...</p>
+</ng-template>

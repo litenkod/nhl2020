@@ -1,15 +1,11 @@
 
 <app-hero *ngIf="team$" [inputData]="inputData"></app-hero>
 
-<section 
-    class="team-detail g-padding-container" 
-    *ngIf="team$" 
-    >
-    <!-- <div class="team-detail__background" [ngStyle]="{'background-image': 'url(' + inputData.imgSrc + ')'}"></div> -->
+<p>Team links</p>
+
+<section class="team-detail g-padding-container" *ngIf="team$" >
     <div class="team-detail__sort">
-        <button class="btn" (click)="sortRoster('pos')">Position</button>
-        <button class="btn" (click)="sortRoster('name')">Name</button>
-        <button class="btn" (click)="sortRoster('number')">Number</button>
+        <button *ngFor="let item of sortList$" [ngClass]="{'active': selectedItem == item}" (click)="sortRoster(item)">{{item}}</button>
     </div>
     <div class="team-detail__roster g-max-container" *ngIf="roster$">
         <div 
@@ -30,19 +26,6 @@
                 <path d="M27 0h-24c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h24c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM26 28h-22v-24h22v24zM8 18h14v2h-14zM8 22h14v2h-14zM10 9c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3s-3-1.343-3-3zM15 12h-4c-1.65 0-3 0.9-3 2v2h10v-2c0-1.1-1.35-2-3-2z"></path>
                 </svg>
             </a>
-            <!-- <button type="button" title="Details of {{player.person.fullName}}">
-            </button> -->
-            <!-- <div class="player-stats">
-                <div>
-                    <span class="games">GP82 </span>
-                    <span class="goal">G1 </span>
-                    <span class="assists">A21 </span>
-                    <span class="points">P22 </span>
-                    <span class="gameWinningGoals"> - GWG0 </span>
-                    <span class="shortHandedGoals">SHG1 </span>
-                    <span class="pim">PIM61</span>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>

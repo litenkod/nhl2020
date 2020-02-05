@@ -5,7 +5,7 @@
         >
         <div class="hero__content">
             <h1 [innerHTML]="inputData.name"></h1>
-            <a href="{{inputData.officialSiteUrl}}" class="hero__link">{{inputData.officialSiteUrl}}</a>
+            <a *ngIf="inputData.officialSiteUrl" href="{{inputData.officialSiteUrl}}" class="hero__link">{{inputData.officialSiteUrl}}</a>
         </div>
     </div>
 </section>

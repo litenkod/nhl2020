@@ -12,6 +12,12 @@ import helper from '../helper'
 export class TeamDetailComponent implements OnInit {
   team$;
   roster$;
+  selectedItem;
+  sortList$ = [
+    'Name',
+    'Number',
+    'Position',
+  ]
 
   inputData = {};
 
@@ -20,19 +26,21 @@ export class TeamDetailComponent implements OnInit {
     private teamDetailService: TeamDetailService) { }
 
   sortRoster(sortValue) {
+    this.selectedItem = sortValue;
+    // sortValue.active = !sortValue.active; 
     switch (sortValue) {
-      case 'pos':
+      case 'Position':
         this.roster$ = helper.rosterSortPos(this.roster$);
         break;
-    
-      case 'name':
+
+      case 'Name':
         this.roster$ = helper.rosterSortFullName(this.roster$);
         break;
-    
-      case 'number':
+
+      case 'Number':
         this.roster$ = helper.rosterSortNumber(this.roster$);
         break;
-          
+
       default:
         break;
     }

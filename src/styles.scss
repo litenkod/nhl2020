@@ -1,15 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "./reset.css";
+@import "./core-styles/mixins.scss";
 @import "./core-styles/typography.scss";
 
-html {
-    font-size: 100%;
+body {
+    position: relative;
+    min-height: 100vh;
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
 }
 
 .g-max-container {
     max-width: 100%;
-    padding: 0 3rem;
+    padding: 0 1rem;
+
+    @include mobile-l {
+        padding: 0 3rem;
+    }
 }
 
 .g-padding-container {
@@ -30,7 +40,7 @@ button,
 .btn {
     padding: .4rem .6rem;
     font-size: 1rem;
-    font-family: Open Sans Condensed,Arial,sans-serif;
+    font-family: var(--font-1);
     color: #444;
     border: 1px solid #ccc;
     border-radius: .2rem;
