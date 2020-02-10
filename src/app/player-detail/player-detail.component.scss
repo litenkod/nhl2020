@@ -1,33 +1,55 @@
 
-:host ::ng-deep .hero h1 {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    font-family: var(--font-2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .hero__numbers {
-        position: absolute;
-        right: -1rem;
-        color: #333;
+:host ::ng-deep .hero {
+    h1  {
+        position: static;
+        width: 100%;
         text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 10rem;
-        margin-left: -2rem;
-        font-family: var(--font-3);
-        opacity: 1;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: #888;
+        font-family: var(--font-2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .hero__numbers {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #333;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 4rem;
+            font-family: var(--font-3);
+            opacity: 1;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #888;
+        }
+
+        .hero__name{
+            z-index: 10;
+            position: relative;
+            text-shadow: 1px 1px 1px #777;
+        }
     }
 
-    .hero__name{
-        z-index: 10;
-        position: relative;
-        width: 65vw;
-        margin-left: 1rem;
-        text-shadow: 1px 1px 1px #777;
+    @media only screen and (min-width: 768px) {
+
+        h1 {
+            position: relative;
+
+            .hero__name{
+                z-index: 10;
+                position: relative;
+                width: 65vw;
+                margin-left: 1rem;
+                text-shadow: 1px 1px 1px #777;
+            }
+
+            .hero__numbers {
+                right: -1rem;
+                top: auto;
+                transform: translate(1rem, 0rem);
+                font-size: 10rem;
+            }
+        }
     }
 }
 
@@ -35,11 +57,15 @@
 
     &__info {
         display: grid;
-        grid-template-columns: minmax(3rem, 16rem) 3fr;
+        grid-template-columns: 1fr;
         grid-gap: 1rem;
+        margin-top: -5rem;
+        position: relative;
+        z-index: 10;
 
         img {
-            max-width: 100%;
+            max-width: 9rem;
+            margin: auto;
             border-radius: 100%;
             border: 2px solid #ccc;
         }
@@ -47,18 +73,15 @@
 
     h2 {
         text-align: left;
-        // font-size: 2rem;
 
         span {
             display: block;
             font-size: 3rem;
-            // letter-spacing: .4rem;
         }
     }
 
     &__data {
         font-size: 1.4rem;
-        padding-left: 3rem;
     }
 
     &__header {
@@ -72,15 +95,11 @@
     &__captain,
     &__alternate-captain,
     &__rookie {
-        padding: .6rem;
+        font-size: 1.4rem;
+        padding: .4rem;
         color: #fff;
         background: #e0dfdf;
         border: 2px solid #ccc;
-    }
-
-    &__rookie {
-        line-height: 3rem;
-        font-size: 1.6rem;
     }
 
     &__birth,
@@ -92,5 +111,29 @@
 
     &__stats {
         border-top: 1px solid #ccc;
+    }
+
+
+
+    @media only screen and (min-width: 768px) {
+        &__info {
+            grid-template-columns: minmax(3rem, 15rem) 3fr;
+            margin-top: 0;
+
+            img {
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+        &__data {
+            padding-left: 3rem;
+        }
+
+        // &__captain,
+        // &__alternate-captain,
+        // &__rookie {
+        //     // line-height: 3rem;
+        //     font-size: 1.4rem;
+        // }
     }
 }
