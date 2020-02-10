@@ -1,14 +1,6 @@
-<!-- <app-top-banner></app-top-banner> -->
+
 <app-hero *ngIf="inputData" [inputData]="inputData" ></app-hero>
 
-<div class="start-view g-max-container g-padding-container">
-    <a 
-        class="btn" 
-        *ngFor="let team of teams$; index as teamId" 
-        [routerLink]="['/teams', team.id]" 
-        data-id="{{team.id}}">
-        <img src="https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/{{team.id}}.svg" alt={team.name}/>
-    </a>
-</div>
+<!-- <app-team-list></app-team-list> -->
+<app-team-list [currentTeamId]="team$"></app-team-list>
 
-<!-- <p *ngIf="copyright$"> {{copyright$}}</p> -->

@@ -19,7 +19,6 @@ export class PlayerDetailComponent implements OnInit {
   fetchPlayerDetail(PlayerId) {
     this.playerDetailService.fetchPlayerDetails(PlayerId).subscribe(val => {
       this.player$ = val.people[0];
-      console.log('this.player$ :', this.player$);
       this.inputData = {
         imgSrc:'https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/' + this.player$.currentTeam.id + '.svg',
         name: `

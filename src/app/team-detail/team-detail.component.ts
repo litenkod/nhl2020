@@ -12,12 +12,12 @@ import helper from '../helper'
 export class TeamDetailComponent implements OnInit {
   team$;
   roster$;
-  selectedItem;
+  selectedItem: string;
   sortList$ = [
     'Name',
     'Number',
     'Position',
-  ]
+  ];
 
   inputData = {};
 
@@ -26,9 +26,11 @@ export class TeamDetailComponent implements OnInit {
     private teamDetailService: TeamDetailService) { }
 
   sortRoster(sortValue) {
-    this.selectedItem = sortValue;
-    // sortValue.active = !sortValue.active; 
-    switch (sortValue) {
+    if(sortValue !== null && this.selectedItem !== sortValue ) {
+      this.selectedItem = sortValue;
+    }
+
+    switch (this.selectedItem) {
       case 'Position':
         this.roster$ = helper.rosterSortPos(this.roster$);
         break;
@@ -42,6 +44,7 @@ export class TeamDetailComponent implements OnInit {
         break;
 
       default:
+        this.roster$ = helper.rosterSortPos(this.roster$);
         break;
     }
   }
@@ -49,21 +52,21 @@ export class TeamDetailComponent implements OnInit {
   fetchTeam(TeamId) {
     this.teamDetailService.fetchTeamDetails(TeamId).subscribe(val => {
       this.team$ = val.teams[0];
-      console.log('this.team$ :', this.team$);
 
       this.inputData = {
         imgSrc:'https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/' + this.team$.id + '.svg',
         name: this.team$.name,
         officialSiteUrl: this.team$.officialSiteUrl
       }
-      let rosterArray = val.teams[0].roster.roster;
-      this.roster$ = [...helper.rosterSortPos(rosterArray)];
+
+      this.roster$ = [...val.teams[0].roster.roster];
+      this.sortRoster(null);
     });
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.fetchTeam(params.get('teamId'))
+      this.fetchTeam(params.get('teamId'));
     });
   }
 

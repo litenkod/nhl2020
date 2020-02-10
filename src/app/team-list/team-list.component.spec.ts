@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartViewComponent } from './start-view.component';
+import { TeamListComponent } from './team-list.component';
 
-describe('TeamsListComponent', () => {
-  let component: StartViewComponent;
-  let fixture: ComponentFixture<StartViewComponent>;
+describe('TeamListComponent', () => {
+  let component: TeamListComponent;
+  let fixture: ComponentFixture<TeamListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StartViewComponent ]
+      declarations: [ TeamListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StartViewComponent);
+    fixture = TestBed.createComponent(TeamListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

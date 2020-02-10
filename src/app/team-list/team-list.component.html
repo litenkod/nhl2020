@@ -1,0 +1,13 @@
+
+<div 
+    class="team-list g-max-container g-padding-container" 
+    [ngClass]="{'team-list--minor' : customClass}"
+    *ngIf="teams$">
+    <a 
+        class="btn"
+        *ngFor="let team of teams$; index as teamId" 
+        [routerLink]="['/teams', team.id]" 
+        [ngClass]="{'--active': team.id == currentTeamId}">
+        <img src="https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/{{team.id}}.svg" alt={team.name}/>
+    </a>
+</div>

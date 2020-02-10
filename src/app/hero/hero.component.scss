@@ -2,41 +2,11 @@
 
 .hero {
     position: relative;
-    height: 30vh;
-    min-height: 200px;
+    // height: 30vh;
+    min-height: 15rem;
     width: 100%;
     color: #fff;
     background: pink;
-
-    
-    &__header {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 3rem;
-    }
-
-    &__link {
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-        color: #ccc;
-        text-decoration: none;
-        text-align: center;
-
-        &:hover {
-            color: #fff;
-            background-color: hotpink;
-        }
-    }
-
-    &__preamble {
-        max-width: 700px;
-        font-size: 1.2rem;
-        text-align: left;
-        margin-top: 2rem;
-    }
 
     &__inner {
         position: absolute;
@@ -77,10 +47,40 @@
         flex-flow: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
 
         img {
             width: 8rem;
         }
+    }
+    
+    &__header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    &__link {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        color: #ccc;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+            color: #fff;
+            background-color: hotpink;
+        }
+    }
+
+    &__preamble {
+        max-width: 700px;
+        font-size: 1.2rem;
+        text-align: left;
+        margin-top: 2rem;
     }
 
     &__controller {

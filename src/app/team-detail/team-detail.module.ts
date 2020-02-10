@@ -7,14 +7,14 @@ import { AppRoutingModule } from '../app-routing.module';
 // import { TeamDetailComponent } from '../team-detail/team-detail.component';
 // import { PlayerDetailComponent } from '../player-detail/player-detail.component';
 // import { PlayerStatsComponent } from '../player-stats/player-stats.component';
-// import { TeamsListComponent } from '../start-view/start-view.component';
+// import { TeamListComponent } from '../team-list/team-list.component';
 
 
 @NgModule({
   declarations: [
     // PlayerStatsComponent,
     // HeroComponent,
-    // TeamsListComponent,
+    // TeamListComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +22,5 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class TeamDetailModule {
   constructor(){
-    console.log('hello');
   }
 }

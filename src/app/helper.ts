@@ -16,6 +16,9 @@ const helpers = {
         return array
     },
     rosterSortPos(array) {
+        //sub sort by number first
+        this.rosterSortNumber(array);
+
         let goalie = array.filter(player => player.position.type === "Goalie");
         let defenseman = array.filter(player => player.position.type === "Defenseman");
         let forward = array.filter(player => player.position.type === "Forward");

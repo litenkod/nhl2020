@@ -17,8 +17,14 @@
     // }
 
     .active {
-        color: #000;
-        background: #ffddee;
+        // color: #fff;
+        // background: #333;
+        // border-color: transparent;
+
+        // &:focus {
+        //     outline: 0 solid #333;
+        //     outline-offset: 2px;
+        // }
     }
 
     img {
@@ -99,6 +105,7 @@
 
             svg {
                 width: 3rem;
+                fill: #333;
             }
         }
     }

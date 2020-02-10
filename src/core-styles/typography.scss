@@ -41,28 +41,25 @@
     --font-1: "Raleway-Light",Arial,sans-serif;
     --font-2: "Raleway-Medium",Arial,sans-serif;
     --font-3: "AnonymousPro-Regular",Arial,sans-serif;
+
+    --font-size: 100%;
 }
 
 html {
-    font-size: 100%;
+    font-size: var(--font-size);
     font-family: var(--font-1);
-
-
-    @include mobile-s {
-        font-size: 80%
-    }
-
-    @include mobile-l {
-        font-size: 120%
-    }
 }
 
 ::selection { 
     color: #fff;
     background: hotpink; 
 }
-
 h1,
+h2,
+h3 {
+    font-family: var(--font-2);
+}
+
 h2 {
     text-align: center;
 }
@@ -77,4 +74,17 @@ h2 {
 
 h3 {
     font-size: 1.2rem;
+}
+
+
+@include mobile-s {
+    :root {
+        --font-size: 80%;
+    }
+}
+
+@include mobile-l {
+    :root {
+        --font-size: 120%;
+    }
 }

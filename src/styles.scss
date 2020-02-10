@@ -35,7 +35,6 @@ section {
     }
 }
 
-
 button,
 .btn {
     padding: .4rem .6rem;
@@ -43,11 +42,26 @@ button,
     font-family: var(--font-1);
     color: #444;
     border: 1px solid #ccc;
-    border-radius: .2rem;
+    // border-radius: .2rem;
+    transform: scale(1);
+    transition: transform .4s ease-in-out;
 
-    &.-active,
-	&:hover{
-		background: #ffddee;
-		border-color: pink;
-	}
+    &.--active,
+    &.--active:focus,
+    &:hover{
+        color: #fff;
+        background: #333;
+        border-color: transparent;
+        outline: none;
+        transform: scale(1);
+    }
+
+    &:hover,
+    &:focus {
+        z-index: 10;
+        // transform: scale(1.4);
+        background: #ffddee;
+        border-radius: 0;
+        outline: 1px solid hotpink;
+    }
 }

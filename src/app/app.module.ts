@@ -3,14 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// import { HeroComponent } from './hero/hero.component';
-import { SearchComponent } from './search/search.component';
-// import { TopBannerComponent } from './top-banner/top-banner.component';
-import { TeamsListModule } from './start-view/start-view.module';
+import { StartViewModule } from './start-view/start-view.module';
 import { CopyrightTextComponent } from './copyright-text/copyright-text.component';
-import { CopyrightTextModule } from './copyright-text/copyright-text.module';
-
-// import { PlayerStatsComponent } from './player-stats/player-stats.component';
+import { PlayerListComponent } from './player-list/player-list.component';
 
 
 @NgModule({
@@ -18,15 +13,13 @@ import { CopyrightTextModule } from './copyright-text/copyright-text.module';
     AppComponent,
     // SearchComponent,
     CopyrightTextComponent,
-    // PlayerStatsComponent,
+    PlayerListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TeamsListModule,
-    // CopyrightTextModule,
+    StartViewModule,
   ],
-  // providers: [TeamsService],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,7 @@
 :host ::ng-deep .hero h1 {
     position: relative;
     width: 100%;
+    text-align: center;
     font-family: var(--font-2);
     display: flex;
     justify-content: center;
@@ -22,6 +23,7 @@
     }
 
     .hero__name{
+        z-index: 10;
         position: relative;
         width: 65vw;
         margin-left: 1rem;

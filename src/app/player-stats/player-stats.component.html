@@ -1,116 +1,94 @@
 
-<div class="player-stats g-padding-container" *ngIf="playerStats$ else elseNoStats" >
+<div class="player-stats g-padding-container" *ngIf="playerCurrentStats$ else elseNoStats" >
+
     <div *ngIf="playerData.primaryPosition.code === 'G'; else elseForwardStats">
-        <table>
-            <thead>
-                <th>Games</th>
-                <th>Wins</th>
-                <th>Losses</th>
-                <th>Ties</th>
-                <th>Over Time Losses</th>
-            </thead>
-            <tbody>
-                <td>{{playerStats$.games}}</td>
-                <td>{{playerStats$.wins}}</td>
-                <td>{{playerStats$.losses}}</td>
-                <td>{{playerStats$.ties}}</td>
-                <td>{{playerStats$.ot}}</td>
-            </tbody>
-        </table>
+        <!-- Current season -->
         <div class="player-stats__minor-stats">
-            <h3>Stats</h3>
-            <table>
+            <h3>Career</h3>
+            <table>   
                 <thead>
-                    <th>SA</th>
-                    <th>GA</th>
+                    <th>Year</th>
+                    <th>Team</th>
+                    <th>Games</th>
                     <th>GAA</th>
                     <th>Sv%</th>
                     <th>SO</th>
-                    <th>MIN</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>OTL</th>
                 </thead>
+                <!-- Year -->
                 <tbody>
-                    <td>{{playerStats$.shotsAgainst}}</td>
-                    <td>{{playerStats$.goalsAgainst}}</td>
-                    <td>{{playerStats$.goalAgainstAverage}}</td>
-                    <td>{{playerStats$.savePercentage}}</td>
-                    <td>{{playerStats$.shutouts}}</td>
-                    <td>{{playerStats$.timeOnIce}}</td>
+                    <tr *ngFor="let item of playerSeasonStats$;" [ngClass]="{'player-stats__playoff': item.sequenceNumber !== 1}">
+                        <td class="--small">{{item.season}}</td>
+                        <td>{{item.team.name}}</td>
+                        <td>{{item.stat.games}}</td>
+                        <td>{{item.stat.goalAgainstAverage | number: '1.2-2'}}</td>
+                        <td>{{item.stat.savePercentage | number: '1.3-3'}}</td>
+                        <td>{{item.stat.shutouts}}</td>
+                        <td>{{item.stat.wins}}</td>
+                        <td>{{item.stat.losses}}</td>
+                        <td>{{item.stat.ot}}</td>
+                    </tr>
                 </tbody>
+                <!-- Total -->
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>{{playerSeasonStats$.length}}</td>
+                        <td>{{playerCareerStats$.games}}</td>
+                        <td>{{playerCareerStats$.goalAgainstAverage | number: '1.2-2'}}</td>
+                        <td>{{playerCareerStats$.savePercentage | number: '1.3-3'}}</td>
+                        <td>{{playerCareerStats$.shutouts}}</td>
+                        <td>{{playerCareerStats$.wins}}</td>
+                        <td>{{playerCareerStats$.losses}}</td>
+                        <td>{{playerCareerStats$.ot}}</td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
 
     <ng-template #elseForwardStats>
-        <table>
-            <thead>
-                <th>Games</th>
-                <th>Goals</th>
-                <th>Assists</th>
-                <th>Points</th>
-            </thead>
-            <tbody>
-                <td>{{playerStats$.games}}</td>
-                <td>{{playerStats$.goals}}</td>
-                <td>{{playerStats$.assists}}</td>
-                <td>{{playerStats$.points}}</td>
-            </tbody>
-        </table>
-
         <div class="player-stats__minor-stats">
-            <h3>Stats</h3>
-            <table>
+            <table>   
                 <thead>
-                    <th>S</th>
-                    <th>S%</th>
-                    <th>GWG</th>
-                    <th>PPG</th>
-                    <th>PPP</th>
-                    <th>PP-TOI</th>
-                    <th>PP-TOI/G</th>
-                    <th>OTG</th>
-                    <th>TOI</th>
-                    <th>TOI/G</th>
+                    <th>Year</th>
+                    <th>Team</th>
+                    <th>Games</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Points</th>
                 </thead>
                 <tbody>
-                    <td>{{playerStats$.shots}}</td>
-                    <td>{{playerStats$.shotPct}}</td>
-                    <td>{{playerStats$.gameWinningGoals}}</td>
-                    <td>{{playerStats$.powerPlayGoals}}</td>
-                    <td>{{playerStats$.powerPlayPoints}}</td>
-                    <td>{{playerStats$.powerPlayTimeOnIce}}</td>
-                    <td>{{playerStats$.powerPlayTimeOnIcePerGame}}</td>
-                    <td>{{playerStats$.overTimeGoals}}</td>
-                    <td>{{playerStats$.evenTimeOnIce}}</td>
-                    <td>{{playerStats$.evenTimeOnIcePerGame}}</td>
+                    <tr *ngFor="let item of playerSeasonStats$;">
+                        <td class="--small">{{item.season}}</td>
+                        <!-- <td class="--small"> -->
+                            <!-- <td class="--small" *ngIf="item.sequenceNumber !== 1; else elseBlock2"> - - </td>
+                            <ng-template #elseBlock2>{{item.season}}<ng-template> -->
+                        <!-- </td> -->
+                        <td>{{item.team.name}}</td>
+                        <td>{{item.stat.games}}</td>
+                        <td>{{item.stat.goals}}</td>
+                        <td>{{item.stat.assists}}</td>
+                        <td>{{item.stat.points}}</td>
+                    </tr>
                 </tbody>
-            </table>
-
-            <table>
-                <thead>
-                    <th>FO</th>
-                    <th>Hits</th>
-                    <th>PIM</th>
-                    <th>SHG</th>
-                    <th>SHP</th>
-                    <th>SH-TOI</th>
-                    <th>SH-TOI/G</th>
-                    <th>Blocked</th>
-                    <th>+/-</th>
-                </thead>
-                <tbody>
-                    <td>{{playerStats$.faceOffPct}}</td>
-                    <td>{{playerStats$.hits}}</td>
-                    <td>{{playerStats$.pim}}</td>
-                    <td>{{playerStats$.shortHandedGoals}}</td>
-                    <td>{{playerStats$.shortHandedPoints}}</td>
-                    <td>{{playerStats$.shortHandedTimeOnIce}}</td>
-                    <td>{{playerStats$.shortHandedTimeOnIcePerGame}}</td>
-                    <td>{{playerStats$.blocked}}</td>
-                    <td>{{playerStats$.plusMinus}}</td>
-                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>{{playerSeasonStats$.length}}</td>
+                        <td>{{playerCareerStats$.games}}</td>
+                        <td>{{playerCareerStats$.goals}}</td>
+                        <td>{{playerCareerStats$.assists}}</td>
+                        <td>{{playerCareerStats$.points}}</td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </ng-template>
+    <h3>Career chart</h3>
+    <app-stats-chart [playerPos$]="playerData.primaryPosition.code" [playerStats$]="playerSeasonStats$"></app-stats-chart>
 </div>
 
 <ng-template #elseNoStats>

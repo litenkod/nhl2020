@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartViewComponent } from './start-view.component';
+import { StatsChartComponent } from './stats-chart.component';
 
-describe('TeamsListComponent', () => {
-  let component: StartViewComponent;
-  let fixture: ComponentFixture<StartViewComponent>;
+describe('StatsChartComponent', () => {
+  let component: StatsChartComponent;
+  let fixture: ComponentFixture<StatsChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StartViewComponent ]
+      declarations: [ StatsChartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StartViewComponent);
+    fixture = TestBed.createComponent(StatsChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

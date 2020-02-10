@@ -1,5 +1,6 @@
 
 <app-hero *ngIf="player$" [inputData]="inputData"></app-hero>
+<!-- <app-player-list></app-player-list> -->
 <section class="player-detail g-max-container g-padding-container" *ngIf="player$" >
     <div class="player-detail__info">
         <img src="https://nhl.bamcontent.com/images/headshots/current/168x168/{{player$.id}}@3x.jpg" alt="{{player$.fullName}}">

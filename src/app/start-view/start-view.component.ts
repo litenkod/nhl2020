@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamsService } from '../teams.service';
-import helper from '../helper'
 
 @Component({
   selector: 'app-start-view',
   templateUrl: './start-view.component.html',
   styleUrls: ['./start-view.component.scss']
 })
-export class TeamsListComponent implements OnInit {
-  teams$;
+export class StartViewComponent implements OnInit {
+
   copyright$;
 
   inputData = {
@@ -17,17 +15,10 @@ export class TeamsListComponent implements OnInit {
     officialSiteUrl: 'http://nhl.com'
   };
   
-  constructor(private teamsService: TeamsService) { }
-
-  fetchTeams() {
-    this.teamsService.fetchTeams().subscribe(val => {
-      this.copyright$ = val.copyright
-      this.teams$ = [...helper.sortName(val.teams)];
-    });
-  }
+  constructor() { }
 
   ngOnInit() {
-    this.fetchTeams();
+
   }
 
 }

@@ -16,6 +16,5 @@ import { CopyrightTextComponent } from './copyright-text.component';
 })
 export class CopyrightTextModule { 
   constructor(){
-    console.log('false :', false);
   }
 }

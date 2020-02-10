@@ -1,0 +1,63 @@
+
+.team-list{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+
+	a{
+		margin: 0.2rem;
+		padding: 0.2rem 0.4rem;
+		flex-grow: 1;
+		max-width: 6.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #fff;
+		transform: scale(1);
+		transition: transform .4s ease-in-out;
+
+		&.--active,
+		&.--active:focus,
+		&:hover{
+			background: #333;
+			border-color: transparent;
+			outline: none;
+			transform: scale(1);
+		}
+
+		&:hover,
+		&:focus {
+			z-index: 10;
+			transform: scale(1.4);
+			background: #ffddee;
+			outline: 1px solid hotpink;
+		}
+
+	}
+
+	img{
+		width: 6rem;
+	}
+
+	&--minor {
+		padding: 0;
+		justify-content: center;
+
+		a {
+			position: relative;
+			// max-width: 2.1rem;
+			padding: .1rem;
+			margin: 0 -1px -1px;
+			border-radius: 0;
+
+			@media only screen and (max-width: 1310px){
+				max-width: 2.1rem;
+			}
+
+		}
+
+		img{
+			width: 2rem;
+		}
+	}
+}
