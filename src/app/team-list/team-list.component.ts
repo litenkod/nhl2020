@@ -10,8 +10,7 @@ import { TeamsService } from '../teams.service';
 export class TeamListComponent implements OnInit {
 
   @Input() customClass: string;
-  // @Input() currentTeamId: string = '';
-  currentTeamId;
+  @Input() currentTeamId: string = '';
   teams$;
   copyright$;
   selectedTeam;
