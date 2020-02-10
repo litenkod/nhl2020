@@ -11,7 +11,6 @@ import { PlayerListComponent } from './player-list/player-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // SearchComponent,
     CopyrightTextComponent,
     PlayerListComponent,
   ],

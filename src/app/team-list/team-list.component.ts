@@ -10,8 +10,8 @@ import { TeamsService } from '../teams.service';
 export class TeamListComponent implements OnInit {
 
   @Input() customClass: string;
-  @Input() currentTeamId: string = '';
-
+  // @Input() currentTeamId: string = '';
+  currentTeamId;
   teams$;
   copyright$;
   selectedTeam;
@@ -27,6 +27,7 @@ export class TeamListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // console.log('this.currentTeamId :', this.currentTeamId);
     this.fetchTeams();
   }
 

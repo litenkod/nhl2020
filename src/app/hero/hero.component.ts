@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  @Input() inputData: any[];
+  @Input() inputData;
 
   constructor() { }
   
