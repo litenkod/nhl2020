@@ -16,6 +16,7 @@ export class StatsChartComponent implements OnInit {
     // chart: {
     //   type: 'basic'
     // },
+    colors: ['#03899C',	'#1F6B75',	'#015965',	'#36BBCE',	'#5FC0CE'],
     title: {
       text: ''
     },

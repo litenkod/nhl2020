@@ -4,6 +4,7 @@
         [ngStyle]="{'background-image': 'url(' + inputData.imgSrc + ')'}"
         >
         <div class="hero__content">
+            <!-- <button class="btn button__back">Back</button> -->
             <h1 [innerHTML]="inputData.name"></h1>
             <a *ngIf="inputData.officialSiteUrl" href="{{inputData.officialSiteUrl}}" class="hero__link">{{inputData.officialSiteUrl}}</a>
         </div>

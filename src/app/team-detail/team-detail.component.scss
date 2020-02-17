@@ -1,32 +1,6 @@
 
 .team-detail {
 
-    // &__background {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;   
-    //     background-size: 3rem;
-    //     background-size: 1000%;
-    //     background-position: center;
-    //     background-repeat: no-repeat;
-    //     filter:blur(40px);
-    //     // opacity: .6;
-    //     z-index: -1;
-    // }
-
-    .active {
-        // color: #fff;
-        // background: #333;
-        // border-color: transparent;
-
-        // &:focus {
-        //     outline: 0 solid #333;
-        //     outline-offset: 2px;
-        // }
-    }
-
     img {
         width: 5rem;
 
@@ -106,6 +80,13 @@
             svg {
                 width: 3rem;
                 fill: #333;
+            }
+
+            &:hover,
+            &:focus {
+                svg {
+                    fill: #fff;
+                }
             }
         }
     }
